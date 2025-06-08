@@ -1,4 +1,4 @@
-from .utils import *
+from .utils.cli_utils import *
 
 from pathlib import Path
 

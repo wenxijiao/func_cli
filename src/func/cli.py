@@ -1,5 +1,5 @@
 import typer
-from .init import init_project
+from .utils.init import init_project
 
 __version__ = "0.1.0"
 
