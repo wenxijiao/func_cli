@@ -1,4 +1,4 @@
-import os
+import json
 from pathlib import Path
 import shutil
 
@@ -20,3 +20,27 @@ def init_project():
             shutil.copy(src, dst)
         else:
             pass
+    
+    func_json_path = folder_path / "func.json"
+    if not func_json_path.exists():
+        func_json = {
+            "functions": [
+                {
+                    "name": "greet",
+                    "description": "Greet a person",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the person to greet"
+                            }
+                        },
+                        "required": ["name"]
+                    }
+                }
+            ]
+        }
+
+        with open(func_json_path, 'w') as f:
+            json.dump(func_json, f, indent=4)

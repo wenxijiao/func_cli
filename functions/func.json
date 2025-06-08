@@ -1,0 +1,20 @@
+{
+    "functions": [
+        {
+            "name": "greet",
+            "description": "Greet a person",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the person to greet"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            }
+        }
+    ]
+}
